@@ -33,7 +33,7 @@ def gravar():
         cursor = conn.cursor()
         cursor.execute('insert into tb_user (nome, cpf, endereco) VALUES (%s, %s, %s)', (nome, cpf, endereco))
         conn.commit()
-    return render_template('cadastra.html')
+    return render_template('cadastro.html')
 
 
 
