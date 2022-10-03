@@ -31,7 +31,7 @@ def gravar():
     if nome and cpf and endereco:
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.execute('insert into tbl_user (nome, cpf, endereco) VALUES (%s, %s, %s)', (nome, cpf, endereco))
+        cursor.execute('insert into ac01 (nome, cpf, endereco) VALUES (%s, %s, %s)', (nome, cpf, endereco))
         conn.commit()
     return render_template('cadastro.html')
 
@@ -41,7 +41,7 @@ def gravar():
 def listar():
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('select nome, cpf, endereco from tbl_user')
+    cursor.execute('select nome, cpf, endereco from ac01')
     data = cursor.fetchall()
     conn.commit()
     return render_template('lista.html', datas=data)
